@@ -304,7 +304,7 @@ public class Equalizer {
      */
     public synchronized void update() {
         try {
-            for (Integer sessionId : mAudioSessions.keySet()) {
+            for (Integer sessionId : mAudioSessions.entrySet()) {
                 updateDsp(mAudioSessions.get(sessionId));
             }
         } catch (NoSuchMethodError e) {

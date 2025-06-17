@@ -31,4 +31,23 @@ public class FileObject extends BaseFileObject {
                 ", size='" + size + '\'' +
                 "} " + super.toString();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FileObject)) return false;
+        if (!super.equals(o)) return false;
+
+        FileObject that = (FileObject) o;
+
+        if (duration != that.duration) return false;
+        return extension != null ? extension.equals(that.extension) : that.extension == null;
+    }
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (extension != null ? extension.hashCode() : 0);
+        result = 31 * result + (int) (duration ^ (duration >>> 32));
+        return result;
+    }
 }
