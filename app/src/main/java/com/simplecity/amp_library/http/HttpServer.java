@@ -126,7 +126,15 @@ public class HttpServer {
                         long contentLength = end - start + 1;
                         cleanupAudioStream();
                         audioInputStream = new FileInputStream(file);
-                        audioInputStream.skip(start);
+                        long bytesToSkip = start;
+                        while (bytesToSkip > 0) {
+                            long skipped = audioInputStream.skip(bytesToSkip);
+                            if (skipped <= 0) {
+                                // Skip failed — possibly end of stream
+                                throw new IOException("Failed to skip the required number of bytes in audio stream");
+                            }
+                            bytesToSkip -= skipped;
+                        }
                         Response response = newFixedLengthResponse(Response.Status.PARTIAL_CONTENT, getMimeType(audioFileToServe), audioInputStream, contentLength);
                         response.addHeader("Content-Length", contentLength + "");
                         response.addHeader("Content-Range", "bytes " + start + "-" + end + "/" + fileLength);
@@ -171,7 +179,7 @@ public class HttpServer {
         }
     }
 
-    private final Map<String, String> MIME_TYPES = new HashMap<String, String>() {{
+    private final Map<String, String> MIME_TYPES = new HashMap<String, String>() {
         put("css", "text/css");
         put("htm", "text/html");
         put("html", "text/html");
@@ -198,7 +206,7 @@ public class HttpServer {
         put("zip", "application/octet-stream");
         put("exe", "application/octet-stream");
         put("class", "application/octet-stream");
-    }};
+    };
 
     String getMimeType(String filePath) {
         return MIME_TYPES.get(filePath.substring(filePath.lastIndexOf(".") + 1));
