@@ -3,6 +3,8 @@ package com.github.florent37.glidepalette;
 import android.support.v4.util.Pair;
 import android.view.View;
 import android.widget.TextView;
+import com.github.florent37.glidepalette.BitmapPalette.Profile;
+
 
 import java.util.ArrayList;
 
