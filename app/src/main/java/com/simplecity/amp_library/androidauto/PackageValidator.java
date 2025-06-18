@@ -169,7 +169,7 @@ public class PackageValidator {
         return null;
     }
 
-    private final static class CallerInfo {
+    private static final class CallerInfo {
         final String name;
         final String packageName;
         final boolean release;

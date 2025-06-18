@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-public interface ViewModel<VH extends RecyclerView.ViewHolder> extends ContentsComparator {
+public interface ViewModel extends RecyclerView.ViewHolder> extends ContentsComparator {
 
     int getViewType();
 

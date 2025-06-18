@@ -55,7 +55,7 @@ public class EqualizerFragment extends BaseFragment implements
     /**
      * Max number of EQ bands supported
      */
-    private final static int EQUALIZER_MAX_BANDS = 6;
+    private static final int EQUALIZER_MAX_BANDS = 6;
 
     /**
      * Indicates if Equalizer effect is supported.

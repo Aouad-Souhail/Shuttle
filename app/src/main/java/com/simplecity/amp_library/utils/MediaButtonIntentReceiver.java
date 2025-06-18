@@ -32,7 +32,7 @@ public class MediaButtonIntentReceiver extends DaggerBroadcastReceiver {
     private static int clickCounter = 0;
     private static long lastClickTime = 0;
     private static boolean down = false;
-    private static boolean launched = false;
+    private boolean launched = false;
 
     private static PowerManager.WakeLock wakeLock = null;
 

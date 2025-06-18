@@ -10,7 +10,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.github.florent37.glidepalette.BitmapPalette.CallBack;
 
-public class GlidePalette<ModelType, TranscodeType> extends BitmapPalette implements RequestListener<ModelType, TranscodeType> {
+public class GlidePalette extends BitmapPalette implements RequestListener<ModelType, TranscodeType> {
 
     protected RequestListener<ModelType, TranscodeType> callback;
 

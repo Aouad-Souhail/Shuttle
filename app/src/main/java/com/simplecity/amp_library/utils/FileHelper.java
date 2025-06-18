@@ -26,7 +26,7 @@ import java.util.NoSuchElementException;
 
 public class FileHelper {
 
-    private final static String TAG = "FileHelper";
+    private static final  String TAG = "FileHelper";
 
     /**
      * The root directory

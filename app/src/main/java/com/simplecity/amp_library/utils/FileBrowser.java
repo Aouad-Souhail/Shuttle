@@ -107,7 +107,7 @@ public class FileBrowser {
             FolderObject parentObject = new FolderObject();
             parentObject.fileType = FileType.PARENT;
             parentObject.name = FileHelper.PARENT_DIRECTORY;
-            parentObject.path = FileHelper.getPath(currentDir) + "/" + FileHelper.PARENT_DIRECTORY;
+            parentObject.path =new File(FileHelper.getPath(currentDir), FileHelper.PARENT_DIRECTORY).getPath();
             folderObjects.add(0, parentObject);
         }
 
@@ -140,11 +140,11 @@ public class FileBrowser {
         files = dir.list((dir1, filename) -> dir1.isDirectory() && filename.toLowerCase().contains("storage"));
 
         if (files != null && files.length > 0) {
-            dir = new File(dir + "/" + files[0]);
+            dir = new File(dir, files[0]).getPath();
             //If there's an extsdcard path in our base dir, let's navigate to that. External SD cards are cool.
             files = dir.list((dir1, filename) -> dir1.isDirectory() && filename.toLowerCase().contains("extsdcard"));
             if (files != null && files.length > 0) {
-                dir = new File(dir + "/" + files[0]);
+                dir = new File(dir, files[0]).getPath();
             } else {
                 //If we have external storage, use that as our initial dir
                 if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
@@ -163,7 +163,7 @@ public class FileBrowser {
             files = dir.list((dir1, filename) -> dir1.isDirectory() && filename.toLowerCase().contains("music"));
         }
         if (files != null && files.length > 0) {
-            dir = new File(dir + "/" + files[0]);
+            dir = new File(dir, files[0]).getPath();
         }
 
         return dir;

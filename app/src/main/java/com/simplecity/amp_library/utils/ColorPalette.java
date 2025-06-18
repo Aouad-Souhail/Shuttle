@@ -14,7 +14,7 @@ public class ColorPalette {
         return ShuttleUtils.isUpgraded((ShuttleApplication) context.getApplicationContext(), settingsManager) ? PRIMARY_COLORS_SUB : PRIMARY_COLORS_SUB_FREE;
     }
 
-    private final static int[] PRIMARY_COLORS = new int[] {
+    private static final int[] PRIMARY_COLORS = new int[] {
             Color.parseColor("#F44336"),
             Color.parseColor("#E91E63"),
             Color.parseColor("#9C27B0"),
@@ -36,7 +36,7 @@ public class ColorPalette {
             Color.parseColor("#607D8B")
     };
 
-    private final static int[][] PRIMARY_COLORS_SUB = new int[][] {
+    private static final int[][] PRIMARY_COLORS_SUB = new int[][] {
             new int[] {
                     Color.parseColor("#FFEBEE"),
                     Color.parseColor("#FFCDD2"),
@@ -267,7 +267,7 @@ public class ColorPalette {
             }
     };
 
-    private final static int[] PRIMARY_COLORS_FREE = new int[] {
+    private static final int[] PRIMARY_COLORS_FREE = new int[] {
             Color.parseColor("#F44336"),
             Color.parseColor("#9C27B0"),
             Color.parseColor("#03A9F4"),
@@ -277,7 +277,7 @@ public class ColorPalette {
             Color.parseColor("#9E9E9E")
     };
 
-    private final static int[][] PRIMARY_COLORS_SUB_FREE = new int[][] {
+    private static final int[][] PRIMARY_COLORS_SUB_FREE = new int[][] {
             new int[] {
                     Color.parseColor("#FFEBEE"),
                     Color.parseColor("#FFCDD2"),

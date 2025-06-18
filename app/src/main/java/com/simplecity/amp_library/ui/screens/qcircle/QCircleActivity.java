@@ -43,7 +43,7 @@ public class QCircleActivity extends BaseActivity {
     // [END] QuickCover Settings DB
 
     // [START] QuickCircle info.
-    static boolean quickCircleEnabled = false;
+    boolean quickCircleEnabled = false;
     int circleWidth = 0;
     int circleHeight = 0;
     int circleXpos = 0;

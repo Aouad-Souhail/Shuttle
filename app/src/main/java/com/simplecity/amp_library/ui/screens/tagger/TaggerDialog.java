@@ -239,11 +239,7 @@ public class TaggerDialog extends DialogFragment {
             title = tag.getFirst(FieldKey.TITLE);
             albumName = tag.getFirst(FieldKey.ALBUM);
             artistName = tag.getFirst(FieldKey.ARTIST);
-            try {
-                albumArtistName = tag.getFirst(FieldKey.ALBUM_ARTIST);
-            } catch (UnsupportedOperationException ignored) {
-
-            }
+            albumArtistName = tag.getFirst(FieldKey.ALBUM_ARTIST);
             genre = tag.getFirst(FieldKey.GENRE);
             year = tag.getFirst(FieldKey.YEAR);
             track = tag.getFirst(FieldKey.TRACK);

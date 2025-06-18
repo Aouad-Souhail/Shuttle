@@ -10,7 +10,7 @@ import com.simplecityapps.recycler_adapter.recyclerview.BaseViewHolder;
 
 import java.util.List;
 
-public abstract class BaseViewModel<VH extends BaseViewHolder> implements
+public abstract class BaseViewModel extends BaseViewHolder> implements
         ViewModel<VH>,
         ContentsComparator {
 

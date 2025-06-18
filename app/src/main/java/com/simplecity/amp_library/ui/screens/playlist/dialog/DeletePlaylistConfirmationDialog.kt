@@ -62,7 +62,7 @@ class DeletePlaylistConfirmationDialog : DialogFragment() {
 }
 
 @Module(includes = [FragmentModule::class])
-abstract class DeletePlaylistConfirmationDialogFragmentModule {
+interface DeletePlaylistConfirmationDialogFragmentModule {
 
     @Binds
     @Named(FragmentModule.FRAGMENT)

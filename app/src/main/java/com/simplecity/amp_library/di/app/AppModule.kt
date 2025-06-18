@@ -39,7 +39,7 @@ class AppModule {
 }
 
 @Module(includes = [AndroidSupportInjectionModule::class])
-abstract class AppModuleBinds {
+interface AppModuleBinds {
 
     @ActivityScope
     @ContributesAndroidInjector(modules = [MainActivityModule::class])

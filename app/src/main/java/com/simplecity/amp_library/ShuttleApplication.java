@@ -30,7 +30,6 @@ import com.simplecity.amp_library.sql.SqlUtils;
 import com.simplecity.amp_library.sql.databases.CustomArtworkTable;
 import com.simplecity.amp_library.sql.providers.PlayCountTable;
 import com.simplecity.amp_library.sql.sqlbrite.SqlBriteUtils;
-import com.simplecity.amp_library.utils.AnalyticsManager;
 import com.simplecity.amp_library.utils.InputMethodManagerLeaks;
 import com.simplecity.amp_library.utils.LegacyUtils;
 import com.simplecity.amp_library.utils.LogUtils;

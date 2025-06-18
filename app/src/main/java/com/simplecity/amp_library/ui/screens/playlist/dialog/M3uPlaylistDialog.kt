@@ -155,7 +155,7 @@ class M3uPlaylistDialog : DialogFragment() {
 }
 
 @Module(includes = arrayOf(FragmentModule::class))
-abstract class M3uDialogFragmentModule {
+interface M3uDialogFragmentModule {
 
     @Binds
     @Named(FragmentModule.FRAGMENT)

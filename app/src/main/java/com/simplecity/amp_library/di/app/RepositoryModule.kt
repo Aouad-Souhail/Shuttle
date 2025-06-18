@@ -31,7 +31,7 @@ class RepositoryModule {
     }
 
     @Module
-    abstract class AbsRepositoryModule {
+    interface AbsRepositoryModule {
 
         @Binds
         @Singleton
