@@ -35,6 +35,14 @@ public class AlbumArtist implements
         this.albums = albums;
     }
 
+    public List<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(List<Album> albums) {
+        this.albums = albums;
+    }
+
     public Single<List<Song>> getSongsSingle(Repository.SongsRepository songsRepository) {
         return songsRepository.getSongs(song -> Stream.of(albums)
                 .map(album -> album.id)
