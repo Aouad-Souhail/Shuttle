@@ -168,7 +168,7 @@ class ArtistDetailFragment :
         }
 
         override fun onStartDrag(holder: SongView.ViewHolder) {
-
+            // Cette méthode est volontairement vide car le drag-and-drop
         }
     }
 
@@ -523,7 +523,7 @@ class ArtistDetailFragment :
     override fun setData(albums: List<Album>, songs: List<Song>) {
         val viewModels = ArrayList<ViewModel<*>>()
 
-        if (!albums.isEmpty()) {
+        if (albums.isNotEmpty()) {
 
             val items = ArrayList<ViewModel<*>>()
 
@@ -545,7 +545,7 @@ class ArtistDetailFragment :
             viewModels.addAll(items)
         }
 
-        if (!songs.isEmpty()) {
+        if (songs.isNotEmpty()) {
             val items = ArrayList<ViewModel<*>>()
 
             items.add(SubheaderView(StringUtils.makeSongsAndTimeLabel(context!!, songs.size, songs.map { song -> song.duration / 1000 }.sum())))

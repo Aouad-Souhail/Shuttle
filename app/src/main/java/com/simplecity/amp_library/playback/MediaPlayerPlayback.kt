@@ -296,7 +296,7 @@ internal class MediaPlayerPlayback(context: Context) : LocalPlayback(context), M
     }
 
     override fun updateLastKnownStreamPosition() {
-
+        // Cette méthode est volontairement vide car le drag-and-drop
     }
 
     private fun createMediaPlayer(context: Context): MediaPlayer {

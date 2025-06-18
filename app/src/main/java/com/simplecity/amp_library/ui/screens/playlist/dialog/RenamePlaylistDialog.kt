@@ -34,7 +34,7 @@ class RenamePlaylistDialog : DialogFragment() {
             .title(R.string.create_playlist_create_text_prompt)
             .customView(customView, false)
             .positiveText(R.string.save)
-            .onPositive { materialDialog, dialogAction ->
+            .onPositive { _, _ ->
                 val name = editText.text.toString()
                 if (name.isNotEmpty()) {
                     val resolver = context!!.contentResolver
@@ -55,14 +55,18 @@ class RenamePlaylistDialog : DialogFragment() {
         val dialog = builder.build()
 
         val textWatcher = object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // Cette méthode est volontairement vide car le drag-and-drop
+            }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 // check if playlist with current name exists already, and warn the user if so.
                 setSaveButton(dialog, playlist, editText.text.toString())
             }
 
-            override fun afterTextChanged(s: Editable) {}
+            override fun afterTextChanged(s: Editable) {
+                // Cette méthode est volontairement vide car le drag-and-drop
+            }
         }
 
         editText.addTextChangedListener(textWatcher)

@@ -23,15 +23,15 @@ public class SettingsManager extends BaseSettingsManager {
     }
 
     // Support
-    public static String KEY_PREF_CHANGELOG = "pref_changelog";
-    public static String KEY_PREF_FAQ = "pref_faq";
-    public static String KEY_PREF_HELP = "pref_help";
-    public static String KEY_PREF_RATE = "pref_rate";
-    public static String KEY_PREF_RESTORE_PURCHASES = "pref_restore_purchases";
+    public static String keyPrefChangelog = "pref_changelog";
+    public static String keyPrefFaq = "pref_faq";
+    public static String keyPrefHelp = "pref_help";
+    public static String keyPrefRate = "pref_rate";
+    public static String keyPrefRestorePurchases = "pref_restore_purchases";
 
     // Display
-    public static String KEY_PREF_TAB_CHOOSER = "pref_tab_chooser";
-    public static String KEY_PREF_DEFAULT_PAGE = "pref_default_page";
+    public static String keyPrefTabChooser = "pref_tab_chooser";
+    public static String keyPrefTabDefaultPage = "pref_default_page";
     public static String KEY_DISPLAY_REMAINING_TIME = "pref_display_remaining_time";
 
     // Themes

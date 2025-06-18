@@ -54,7 +54,7 @@ class M3uPlaylistDialog : DialogFragment() {
         disposable = songsRepository.getSongs(playlist)
             .first(emptyList())
             .map(Function<List<Song>, File> { songs ->
-                if (!songs.isEmpty()) {
+                if (songs.isNotEmpty()) {
 
                     var playlistFile: File? = null
 

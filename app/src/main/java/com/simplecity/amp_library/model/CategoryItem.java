@@ -98,6 +98,9 @@ public class CategoryItem {
                 return "folders";
             case Type.PLAYLISTS:
                 return "playlists";
+            default:
+                // Cas non prévu, ne rien faire ou loguer si nécessaire
+                break;
         }
         return null;
     }
@@ -118,6 +121,9 @@ public class CategoryItem {
                 return false;
             case Type.PLAYLISTS:
                 return false;
+            default:
+                // Cas non prévu, ne rien faire ou loguer si nécessaire
+                break;
         }
         return true;
     }
@@ -146,6 +152,9 @@ public class CategoryItem {
                 return FolderFragment.newInstance(context.getString(getTitleResId()), true);
             case Type.PLAYLISTS:
                 return PlaylistListFragment.Companion.newInstance(context.getString(getTitleResId()));
+            default:
+                // Cas non prévu, ne rien faire ou loguer si nécessaire
+                break;
         }
         return null;
     }

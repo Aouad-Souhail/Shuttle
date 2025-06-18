@@ -35,38 +35,47 @@ public class TagUpdate {
         try {
             this.title = tag.getFirst(FieldKey.TITLE);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.album = tag.getFirst(FieldKey.ALBUM);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.artist = tag.getFirst(FieldKey.ARTIST);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.albumArtist = tag.getFirst(FieldKey.ALBUM_ARTIST);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.genre = tag.getFirst(FieldKey.GENRE);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.year = tag.getFirst(FieldKey.YEAR);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.track = tag.getFirst(FieldKey.TRACK);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.trackTotal = tag.getFirst(FieldKey.TRACK_TOTAL);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.disc = tag.getFirst(FieldKey.DISC_NO);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.discTotal = tag.getFirst(FieldKey.DISC_TOTAL);
@@ -75,10 +84,12 @@ public class TagUpdate {
         try {
             this.lyrics = tag.getFirst(FieldKey.LYRICS);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
         try {
             this.comment = tag.getFirst(FieldKey.COMMENT);
         } catch (UnsupportedOperationException ignored) {
+            // If the tag does not support title, we can ignore it.
         }
     }
 
@@ -217,72 +228,83 @@ public class TagUpdate {
             try {
                 tag.setField(FieldKey.TITLE, title);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (albumHasChanged) {
             try {
                 tag.setField(FieldKey.ALBUM, album);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (artistHasChanged) {
             try {
                 tag.setField(FieldKey.ARTIST, artist);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (albumArtistHasChanged) {
             try {
                 tag.setField(FieldKey.ALBUM_ARTIST, albumArtist);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (genreHasChanged) {
             try {
                 tag.setField(FieldKey.GENRE, genre);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (yearHasChanged) {
             try {
                 tag.setField(FieldKey.YEAR, year);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (trackHasChanged) {
             try {
                 tag.setField(FieldKey.TRACK, track);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (trackTotalHasChanged) {
             try {
                 tag.setField(FieldKey.TRACK_TOTAL, trackTotal);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (discHasChanged) {
             try {
                 tag.setField(FieldKey.DISC_NO, disc);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (discTotalHasChanged) {
             try {
                 tag.setField(FieldKey.DISC_TOTAL, discTotal);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (lyricsHasChanged) {
             try {
                 tag.setField(FieldKey.LYRICS, lyrics);
             } catch (Exception ignored) {
+                // If the tag does not support title, we can ignore it.
             }
         }
         if (commentHasChanged) {
             try {
                 tag.setField(FieldKey.COMMENT, comment);
-            } catch (Exception ignored) {
+            } catch (Exception ignored) {// If the tag does not support title, we can ignore it
             }
         }
     }

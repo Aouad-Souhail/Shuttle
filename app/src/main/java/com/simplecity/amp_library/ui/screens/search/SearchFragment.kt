@@ -212,7 +212,7 @@ class SearchFragment :
 
         val viewModels = ArrayList<ViewModel<*>>()
 
-        if (!searchResult.albumArtists.isEmpty()) {
+        if (searchResult.albumArtists.isNotEmpty()) {
             viewModels.add(artistsHeader)
             viewModels.addAll(Stream.of(searchResult.albumArtists)
                     .map { albumArtist ->
@@ -224,7 +224,7 @@ class SearchFragment :
                     .toList())
         }
 
-        if (!searchResult.albums.isEmpty()) {
+        if (searchResult.albums.isNotEmpty()) {
             viewModels.add(albumsHeader)
             viewModels.addAll(Stream.of(searchResult.albums).map { album ->
                 val albumView = AlbumView(album, ViewType.ALBUM_LIST, requestManager, sortManager, settingsManager)
@@ -234,7 +234,7 @@ class SearchFragment :
             }.toList())
         }
 
-        if (!searchResult.songs.isEmpty()) {
+        if (searchResult.songs.isNotEmpty()) {
             viewModels.add(songsHeader)
             viewModels.addAll(Stream.of(searchResult.songs).map { song ->
                 val songView = SongView(song, requestManager, sortManager, settingsManager)
@@ -466,7 +466,7 @@ class SearchFragment :
         }
 
         override fun onStartDrag(holder: SongView.ViewHolder) {
-
+            // Cette méthode est volontairement vide car le drag-and-drop
         }
     }
 

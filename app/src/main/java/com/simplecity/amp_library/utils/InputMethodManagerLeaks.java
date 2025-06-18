@@ -56,6 +56,7 @@ public class InputMethodManagerLeaks {
 
         @Override
         public void onViewAttachedToWindow(View v) {
+            // This is called when the view is attached to the window.
         }
 
         @Override
@@ -189,27 +190,27 @@ public class InputMethodManagerLeaks {
 
             @Override
             public void onActivityResumed(Activity activity) {
-
+                // This is where we ensure that the InputMethodManager is aware of the current focus.
             }
 
             @Override
             public void onActivityPaused(Activity activity) {
-
+                // This is where we can clear the focus if needed.
             }
 
             @Override
             public void onActivityStopped(Activity activity) {
-
+                // This is where we can handle the activity being stopped, if needed.
             }
 
             @Override
             public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-
+                // This is where we can save the state of the activity, if needed.
             }
 
             @Override
             public void onActivityDestroyed(Activity activity) {
-
+                // This is where we can clean up resources related to the activity, if needed.
             }
         });
     }

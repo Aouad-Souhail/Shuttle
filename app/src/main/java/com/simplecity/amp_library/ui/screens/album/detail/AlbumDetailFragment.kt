@@ -417,7 +417,7 @@ class AlbumDetailFragment :
         }
 
         override fun onStartDrag(holder: SongView.ViewHolder) {
-
+            // Cette méthode est volontairement vide car le drag-and-drop
         }
     }
 
@@ -428,7 +428,7 @@ class AlbumDetailFragment :
 
         val songsSortOrder = sortManager.albumDetailSongsSortOrder
 
-        if (!data.isEmpty()) {
+        if (data.isNotEmpty()) {
 
             viewModels.add(SubheaderView(StringUtils.makeSongsAndTimeLabel(context!!, data.size, data.map { song -> song.duration / 1000 }.sum())))
 

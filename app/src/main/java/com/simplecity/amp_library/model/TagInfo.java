@@ -20,6 +20,9 @@ import org.jaudiotagger.tag.TagException;
  */
 public class TagInfo implements Serializable {
 
+
+    private static final String UNKNOWN = "Unknown";
+
     public String artistName;
     public String albumArtistName;
     public String albumName;
@@ -70,8 +73,9 @@ public class TagInfo implements Serializable {
                 }
             }
         } catch (UnsupportedOperationException ignored) {
+            // This exception is thrown if the audio file does not support tags
         }
-        return "Unknown";
+        return UNKNOWN;
     }
 
     public static String getBitrate(AudioFile audioFile) {
@@ -81,8 +85,9 @@ public class TagInfo implements Serializable {
                 return audioHeader.getBitRate();
             }
         } catch (UnsupportedOperationException ignored) {
+            // This exception is thrown if the audio file does not support bitrate information
         }
-        return "Unknown";
+        return UNKNOWN;
     }
 
     public static String getFormat(AudioFile audioFile) {
@@ -92,8 +97,9 @@ public class TagInfo implements Serializable {
                 return audioHeader.getFormat();
             }
         } catch (UnsupportedOperationException ignored) {
+            // This exception is thrown if the audio file does not support format information
         }
-        return "Unknown";
+        return UNKNOWN;
     }
 
     public static int getSampleRate(AudioFile audioFile) {
@@ -103,6 +109,7 @@ public class TagInfo implements Serializable {
                 return audioHeader.getSampleRateAsNumber();
             }
         } catch (UnsupportedOperationException ignored) {
+            // This exception is thrown if the audio file does not support sample rate information
         }
         return -1;
     }

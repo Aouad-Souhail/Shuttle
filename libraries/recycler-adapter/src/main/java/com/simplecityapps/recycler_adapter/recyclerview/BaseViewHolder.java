@@ -28,16 +28,16 @@ public abstract class BaseViewHolder extends ViewModel> extends RecyclerView.Vie
 
     @Override
     public void recycle() {
-
+        // No-op, as this is a base class for ViewHolders.
     }
 
     @Override
     public void onAttachedToWindow() {
-
+        // This method can be overridden in subclasses to handle when the ViewHolder is attached to the window.
     }
 
     @Override
     public void onDetachedFromWindow() {
-
+        // This method can be overridden in subclasses to handle when the ViewHolder is detached from the window.
     }
 }

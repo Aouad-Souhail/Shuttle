@@ -53,12 +53,13 @@ public class CustomArtworkContentProvider extends ContentProvider {
         queryBuilder.setTables(CustomArtworkTable.TABLE_ARTIST_ART);
 
         int uriType = sURIMatcher.match(uri);
-        switch (uriType) {
-            case CUSTOM_ARTWORK:
-                break;
-            default:
-                throw new IllegalArgumentException("Unknown URI: " + uri);
+
+        if (uriType == CUSTOM_ARTWORK) {
+            // No action needed
+        } else {
+            throw new IllegalArgumentException("Unknown URI: " + uri);
         }
+
 
         SQLiteDatabase db = database.getWritableDatabase();
         Cursor cursor = queryBuilder.query(db, projection, selection,

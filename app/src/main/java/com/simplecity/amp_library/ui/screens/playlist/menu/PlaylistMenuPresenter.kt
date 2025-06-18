@@ -31,7 +31,7 @@ class PlaylistMenuPresenter @Inject constructor(
     }
 
     override fun play(playlist: Playlist) {
-        getSongs(playlist) { songs ->
+        getSongs(playlist) { _ ->
             mediaManager.playAll(songsRepository.getSongs(playlist).first(emptyList())) { view?.onPlaybackFailed() }
         }
     }

@@ -92,7 +92,7 @@ public class MediaManager {
     public void shuffleAll(@NotNull List<Song> songs, @NotNull Function0<Unit> onEmpty) {
         analyticsManager.dropBreadcrumb(TAG, "shuffleAll()");
         setShuffleMode(QueueManager.ShuffleMode.ON);
-        if (!songs.isEmpty()) {
+        if (songs.isNotEmpty()) {
             playAll(songs, new random.nextInt(songs.size()), false, onEmpty);
         }
     }

@@ -161,7 +161,7 @@ class PlaylistDetailFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbar!!.setNavigationOnClickListener { v -> navigationController.popViewController() }
+        toolbar!!.setNavigationOnClickListener { _ -> navigationController.popViewController() }
 
         if (ShuttleUtils.canDrawBehindStatusBar()) {
             toolbar!!.layoutParams.height = (ActionBarUtils.getActionBarHeight(context!!) + ActionBarUtils.getStatusBarHeight(context!!)).toInt()
@@ -389,7 +389,7 @@ class PlaylistDetailFragment :
     override fun setData(data: MutableList<Song>) {
         val viewModels = ArrayList<ViewModel<*>>()
 
-        if (!data.isEmpty()) {
+        if (data.isNotEmpty()) {
             val items = ArrayList<ViewModel<*>>()
 
             items.add(SubheaderView(StringUtils.makeSongsAndTimeLabel(context!!, data.size, data.map { song -> song.duration / 1000 }.sum())))
@@ -522,7 +522,7 @@ class PlaylistDetailFragment :
         }, {
             // Nothing to do
         },
-        { pos ->
+        { _ ->
 
         }) {
         override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
