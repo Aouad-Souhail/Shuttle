@@ -119,12 +119,13 @@ public class ArtworkDownloadService extends Service {
                                     .downloadOnly(SimpleTarget.SIZE_ORIGINAL, SimpleTarget.SIZE_ORIGINAL);
                             try {
                                 futureTarget.get(30, TimeUnit.SECONDS);
-                            } catch (InterruptedException | ExecutionException | TimeoutException e) {
-                                if (e instanceof InterruptedException) {
-                                    Thread.currentThread().interrupt(); // Restore interrupt status
-                                }
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt(); // Restore interrupt status
+                                throw new RuntimeException("Task was interrupted", e);
+                            } catch (ExecutionException | TimeoutException e) {
                                 throw new RuntimeException("Task failed", e);
                             }
+
                             Glide.clear(futureTarget);
                             return artwork;
                         }))

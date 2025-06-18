@@ -22,22 +22,22 @@ public class Album implements
         Comparable<Album>,
         Sortable {
 
-    public long id;
-    public String name;
+    public static final long id;
+    public static final String name;
 
-    public List<Artist> artists = new ArrayList<>();
-    public String albumArtistName;
+    public static final List<Artist> artists = new ArrayList<>();
+    public static final String albumArtistName;
 
-    public int year;
-    public int numSongs;
-    public int numDiscs;
+    public static final int year;
+    public static final int numSongs;
+    public static final int numDiscs;
 
-    public long lastPlayed;
-    public long dateAdded;
+    public static final long lastPlayed;
+    public static final long dateAdded;
 
-    public List<String> paths = new ArrayList<>();
+    public static final List<String> paths = new ArrayList<>();
 
-    public int songPlayCount;
+    public static final int songPlayCount;
 
     private String artworkKey;
 

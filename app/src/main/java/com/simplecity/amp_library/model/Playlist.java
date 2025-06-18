@@ -28,13 +28,13 @@ public class Playlist implements Serializable {
     @Type
     public int type;
 
-    public long id;
-    public String name;
-    public boolean canEdit = true;
-    public boolean canClear = false;
-    public boolean canDelete = true;
-    public boolean canRename = true;
-    public boolean canSort = true;
+    public static final long id;
+    public static final String name;
+    public static final boolean canEdit = true;
+    public static final boolean canClear = false;
+    public static final boolean canDelete = true;
+    public static final boolean canRename = true;
+    public static final boolean canSort = true;
 
     // These are the Playlist rows that we will retrieve.
     protected static final String[] PROJECTION = new String[] {

@@ -66,7 +66,17 @@ class CreatePlaylistDialog : DialogFragment() {
         val customView = LayoutInflater.from(context).inflate(R.layout.dialog_playlist, null)
         val editText = customView.findViewById<EditText>(R.id.editText)
 
-        disposable.add(Observable.fromCallable<String> { makePlaylistName() }
+        val existingPlaylists = mutableSetOf<String>()
+        disposable.add(
+            getAllPlaylistNamesObservable() // You need to implement this
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ names ->
+                    existingPlaylists.addAll(names.map { it.lowercase(Locale.getDefault()) })
+                }, { error ->
+                    LogUtils.logException(TAG, "Error loading playlist names", error)
+                })
+        )
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -155,33 +165,13 @@ class CreatePlaylistDialog : DialogFragment() {
                 // don't care about this one
             }
 
-            //Fixme: It's probably best to just query all playlist names first, and then check against hat list, rather than requerying for each char change.
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                val newText = editText.text.toString()
-                if (newText.trim { it <= ' ' }.isEmpty()) {
-                    dialog.getActionButton(DialogAction.POSITIVE).isEnabled = false
+                val newText = editText.text.toString().trim()
+                dialog.getActionButton(DialogAction.POSITIVE).isEnabled = newText.isNotEmpty()
+                if (existingPlaylists.contains(newText.lowercase(Locale.getDefault()))) {
+                    dialog.getActionButton(DialogAction.POSITIVE).setText(R.string.create_playlist_overwrite_text)
                 } else {
-                    dialog.getActionButton(DialogAction.POSITIVE).isEnabled = true
-                    // check if playlist with current name exists already, and warn the user if so.
-                    disposable.add(idForPlaylistObservable(newText)
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(
-                            { id ->
-                                if (id >= 0) {
-                                    dialog.getActionButton(DialogAction.POSITIVE).setText(R.string.create_playlist_overwrite_text)
-                                } else {
-                                    dialog.getActionButton(DialogAction.POSITIVE).setText(R.string.create_playlist_create_text)
-                                }
-                            },
-                            { error ->
-                                LogUtils.logException(
-                                    TAG,
-                                    "PlaylistManager: Error handling text change",
-                                    error
-                                )
-                            }
-                        ))
+                    dialog.getActionButton(DialogAction.POSITIVE).setText(R.string.create_playlist_create_text)
                 }
             }
 

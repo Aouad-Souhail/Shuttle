@@ -89,10 +89,17 @@ abstract class LocalPlayback(context: Context) : Playback {
         configurePlayerState()
     }
 
-    override fun willResumePlayback(): Boolean {
-        // Fixme: This returns true even after manually pausing playback. This should not be the case.
-        return playOnFocusGain
+    private var manuallyPaused: Boolean = false
+
+    fun setManuallyPaused(paused: Boolean) {
+        manuallyPaused = paused
     }
+
+    override fun willResumePlayback(): Boolean {
+        // Return true only if playback should resume AND it wasn’t manually paused by the user
+        return playOnFocusGain && !manuallyPaused
+    }
+
 
     @CallSuper
     override fun pause(fade: Boolean) {

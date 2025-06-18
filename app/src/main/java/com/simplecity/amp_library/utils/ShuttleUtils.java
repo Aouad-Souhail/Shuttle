@@ -47,7 +47,7 @@ public final class ShuttleUtils {
 
     //Arguments supplied to various bundles
 
-    private static final String tag = "ShuttleUtils";
+    private static final String TAG = "ShuttleUtils";
 
     @NonNull
     public static Intent getShuttleStoreIntent(@NonNull String packageName) {
@@ -195,7 +195,7 @@ public final class ShuttleUtils {
                 context.getContentResolver().insert(PlayCountTable.URI, values);
             }
         } catch (IllegalArgumentException e) {
-            Log.e(tag, "Failed to increment play count: " + e.toString());
+            Log.e(TAG, "Failed to increment play count: " + e.toString());
         }
     }
 

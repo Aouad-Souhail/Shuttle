@@ -28,8 +28,10 @@ public class ArtworkModel {
                 return "Folder";
             case ArtworkProvider.Type.REMOTE:
                 return context.getString(R.string.artwork_type_internet);
+            default:
+                // Cas non prévu, ne rien faire ou loguer si nécessaire
+                return null;
         }
-        return null;
     }
 
     @Override

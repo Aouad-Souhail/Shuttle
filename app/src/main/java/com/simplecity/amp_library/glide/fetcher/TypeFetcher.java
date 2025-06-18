@@ -57,6 +57,9 @@ public class TypeFetcher implements DataFetcher<InputStream> {
             case ArtworkProvider.Type.REMOTE:
                 dataFetcher = new RemoteFetcher(artworkProvider);
                 break;
+            default:
+                // Cas non prévu, ne rien faire ou loguer si nécessaire
+                break;
         }
         return loadData(dataFetcher, priority);
     }

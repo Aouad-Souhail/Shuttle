@@ -78,8 +78,10 @@ public class CategoryItem {
                 return R.string.folders_title;
             case Type.PLAYLISTS:
                 return R.string.playlists_title;
+            default:
+                // Cas non prévu, ne rien faire ou loguer si nécessaire
+                return -1;
         }
-        return -1;
     }
 
     public String getKey() {
