@@ -143,7 +143,7 @@ public class FileHelper {
                 filePath = file.getAbsolutePath();
             }
         } catch (IOException ignored) {
-
+            //test
         }
 
         if (!TextUtils.isEmpty(filePath) && filePath.equals("/storage/emulated/0") ||

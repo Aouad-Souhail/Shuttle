@@ -116,11 +116,12 @@ public class ArtworkUtils {
                         try {
                             fileInputStream = new FileInputStream(file);
                         } catch (FileNotFoundException ignored) {
-
+                            //test
                         }
                     }
                 }
             } catch (NullPointerException ignored) {
+                //test
 
             } finally {
                 cursor.close();

@@ -80,6 +80,7 @@ public class TagUpdate {
         try {
             this.discTotal = tag.getFirst(FieldKey.DISC_TOTAL);
         } catch (UnsupportedOperationException ignored) {
+            //test
         }
         try {
             this.lyrics = tag.getFirst(FieldKey.LYRICS);

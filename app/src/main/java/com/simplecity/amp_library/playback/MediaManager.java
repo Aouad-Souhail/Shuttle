@@ -190,6 +190,7 @@ public class MediaManager {
                 MusicServiceConnectionUtils.serviceBinder.getService().togglePlayback();
             }
         } catch (final Exception ignored) {
+            //test
         }
     }
 

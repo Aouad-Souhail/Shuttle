@@ -253,8 +253,10 @@ public class QCircleActivity extends BaseActivity {
             return;
         }
         if (MusicServiceConnectionUtils.serviceBinder != null && mediaManager.isPlaying()) {
+            //test
 
         } else {
+            //test
 
         }
     }

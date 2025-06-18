@@ -246,17 +246,17 @@ public class TaggerDialog extends DialogFragment {
             try {
                 trackTotal = tag.getFirst(FieldKey.TRACK_TOTAL);
             } catch (UnsupportedOperationException ignored) {
-
+                // Some tags do not support track total
             }
             try {
                 disc = tag.getFirst(FieldKey.DISC_NO);
             } catch (UnsupportedOperationException ignored) {
-
+                // Some tags do not support disc number
             }
             try {
                 discTotal = tag.getFirst(FieldKey.DISC_TOTAL);
             } catch (UnsupportedOperationException ignored) {
-
+                // Some tags do not support disc total
             }
             try {
                 lyrics = tag.getFirst(FieldKey.LYRICS);
@@ -266,7 +266,7 @@ public class TaggerDialog extends DialogFragment {
             try {
                 comment = tag.getFirst(FieldKey.COMMENT);
             } catch (UnsupportedOperationException ignored) {
-
+                // Some tags do not support comments
             }
         } catch (IOException | InvalidAudioFrameException | TagException | ReadOnlyFileException | CannotReadException e) {
             Log.e(TAG, "Failed to read tags. " + e.toString());
