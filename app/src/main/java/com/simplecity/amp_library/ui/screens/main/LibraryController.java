@@ -286,7 +286,6 @@ public class LibraryController extends BaseFragment implements
         if (transitionView != null) {
             String transitionName = ViewCompat.getTransitionName(transitionView);
             transitions.add(new Pair<>(transitionView, transitionName));
-            //            transitions.add(new Pair<>(toolbar, "toolbar"));
 
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                 Transition moveTransition = TransitionInflater.from(getContext()).inflateTransition(R.transition.image_transition);

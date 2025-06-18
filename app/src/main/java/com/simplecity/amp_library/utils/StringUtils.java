@@ -37,7 +37,6 @@ public class StringUtils {
      */
     public static String makeTimeString(@NonNull Context context, long secs) {
         sFormatBuilder.setLength(0);
-        //return (secs < 0 ? "- " : "") + (Math.abs(secs) < 3600 ? makeShortTimeString(context, Math.abs(secs)) : makeLongTimeString(context, Math.abs(secs)));
         return Math.abs(secs) < 3600 ? makeShortTimeString(context, secs) : makeLongTimeString(context, secs);
     }
 

@@ -41,7 +41,7 @@ public class NavigationEventRelay {
 
     public Observable<NavigationEvent> getEvents() {
         // Delay the event a tiny bit, to allow the drawer to close.
-        return relay;//.delay(250, TimeUnit.MILLISECONDS);
+        return relay;
     }
 
     public static class NavigationEvent {

@@ -82,8 +82,6 @@ public class QCircleActivity extends BaseActivity {
         final View circlemainView = findViewById(R.id.cover_main_view);
 
         //Set QR images for the image view.
-        //setQrImage();
-
         //Get application context
         mContext = getApplicationContext();
 
