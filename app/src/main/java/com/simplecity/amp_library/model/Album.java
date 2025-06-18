@@ -25,7 +25,7 @@ public class Album implements
     public static final long id;
     public static final String name;
 
-    public static final List<Artist> artists = new ArrayList<>();
+    protected static final List<Artist> artists = new ArrayList<>();
     public static final String albumArtistName;
 
     public static final int year;
@@ -35,7 +35,7 @@ public class Album implements
     public static final long lastPlayed;
     public static final long dateAdded;
 
-    public static final List<String> paths = new ArrayList<>();
+    protected static final List<String> paths = new ArrayList<>();
 
     public static final int songPlayCount;
 
