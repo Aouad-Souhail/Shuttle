@@ -163,6 +163,7 @@
             android:icon="@drawable/ic_headphones_white"
             android:label="@string/app_name"
             android:permission="com.google.android.apps.dashclock.permission.READ_EXTENSION_DATA">
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.android.apps.dashclock.Extension"/>
             </intent-filter>
@@ -180,6 +181,7 @@
             android:label="@string/download_service"/>
 
         <receiver android:name="com.simplecity.amp_library.utils.MediaButtonIntentReceiver">
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.intent.action.MEDIA_BUTTON"
@@ -195,6 +197,7 @@
         <activity
             android:name=".ui.widgets.WidgetConfigureActivityMedium"
             android:theme="@style/WallpaperTheme">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
@@ -204,6 +207,7 @@
         <activity
             android:name=".ui.widgets.WidgetConfigureActivityExtraLarge"
             android:theme="@style/WallpaperTheme">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
@@ -213,6 +217,7 @@
         <receiver
             android:name=".ui.widgets.WidgetProviderMedium"
             android:label="Shuttle 4x1">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -226,6 +231,7 @@
         <activity
             android:name=".ui.widgets.WidgetConfigureActivitySmall"
             android:theme="@style/WallpaperTheme">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
@@ -235,6 +241,7 @@
         <receiver
             android:name=".ui.widgets.WidgetProviderSmall"
             android:label="Shuttle 2x1">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -248,6 +255,7 @@
         <activity
             android:name=".ui.widgets.WidgetConfigureActivityLarge"
             android:theme="@style/WallpaperTheme">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
@@ -261,6 +269,7 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar.FullScreen">
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="com.lge.quickcover"/>
@@ -274,6 +283,7 @@
         <receiver
             android:name=".ui.widgets.WidgetProviderLarge"
             android:label="Shuttle 4x2">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -287,6 +297,7 @@
         <receiver
             android:name=".ui.widgets.WidgetProviderExtraLarge"
             android:label="Shuttle 4x4">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
